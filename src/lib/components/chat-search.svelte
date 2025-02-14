@@ -10,7 +10,7 @@
 	];
 </script>
 
-<div class="-mt-11 w-full rounded-lg border border-black bg-gray-900 p-1.5">
+<div class="w-full rounded-lg border border-black bg-gray-900 p-1.5">
 	<div class="relative flex items-center">
 		<input
 			type="text"

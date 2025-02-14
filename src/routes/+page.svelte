@@ -1,5 +1,9 @@
-<script>
-	import ChatWidget from '../lib/components/chat-widget.svelte';
+<script lang="ts">
+	import ChatSearch from '$lib/components/chat-search.svelte';
+	import ChatMessage from '$lib/components/chat-message.svelte';
 </script>
 
-<ChatWidget />
+<div class="grid gap-4">
+	<ChatMessage />
+	<ChatSearch />
+</div>

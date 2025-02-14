@@ -1,5 +1,10 @@
 <script>
 	import SendIcon from '$lib/icons/send-icon.svelte';
+	import { goto } from '$app/navigation';
+
+	const navigateTo = (path) => {
+		goto(path);
+	};
 </script>
 
 <div
@@ -9,7 +14,10 @@
 		<p class="text-white">Send us a message</p>
 		<p class="text-sm leading-5 font-normal text-gray-500">We typically reply within a day</p>
 	</div>
-	<button class="flex h-10 w-10 cursor-pointer items-center justify-end text-cyan-500">
+	<button
+		on:click={() => navigateTo('/messages')}
+		class="flex h-10 w-10 cursor-pointer items-center justify-end text-cyan-500"
+	>
 		<SendIcon />
 	</button>
 </div>

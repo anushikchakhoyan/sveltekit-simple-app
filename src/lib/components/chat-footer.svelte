@@ -3,7 +3,7 @@
 	import HelpIcon from '$lib/icons/help-icon.svelte';
 	import MessageIcon from '$lib/icons/message-icon.svelte';
 	import { goto } from '$app/navigation';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 
 	const navigateTo = (path) => {
 		goto(path);
@@ -35,7 +35,7 @@
 		<button
 			on:click={() => navigateTo(url)}
 			class="flex flex-1 cursor-pointer flex-col items-center gap-2 text-white transition-colors hover:text-cyan-500"
-			class:active={$page.url.pathname === url}
+			class:active={page.url.pathname === url}
 		>
 			<Icon />
 			<p class="text-sm leading-snug font-normal tracking-normal">{title}</p>
@@ -45,7 +45,11 @@
 
 <style lang="postcss">
 	@reference "tailwindcss";
-	.active p {
-		@apply font-bold;
+	.active {
+		@apply text-cyan-500;
+
+		p {
+			@apply font-bold;
+		}
 	}
 </style>
