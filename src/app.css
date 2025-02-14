@@ -1,25 +1,55 @@
 @import 'tailwindcss';
 
-@theme {
-    --color-cyan-500: #25FFBC;
-    --color-black: #15171B;
-    --color-white: #fff;
-    --color-gray-400: #B9BABB;
-    --color-gray-500: #83838D;
-    --color-gray-800: #1C1E22;
-    --color-gray-900: #0B0B0F;
+/* @theme {} */
 
-    /* ========== Font Families ========== */
-    --font-family-sf-pro-display: 'SF Pro Display', sans-serif;
-    --font-family-inter: 'Inter', sans-serif;
+@layer base {
+    :root {
+        --color-cyan-500: #25FFBC;
+        --color-black: #15171B;
+        --color-white: #fff;
+        --color-gray-400: #B9BABB;
+        --color-gray-500: #83838D;
+        --color-gray-800: #1C1E22;
+        --color-gray-900: #0B0B0F;
 
-    /* ========== Spacing/Width ========== */
-    --width-25: 25rem;
-    --spacing-7-5: 1.875rem;
+        /* ========== Font Families ========== */
+        --font-family-sf-pro-display: 'SF Pro Display', sans-serif;
+        --font-family-inter: 'Inter', sans-serif;
 
-    /* ========== Typography ========== */
-    --font-size-3xl: 2rem;
+        /* ========== Spacing/Width ========== */
+        --width-25: 25rem;
+        --spacing-7-5: 1.875rem;
 
-    /* ========== Border Radius ========== */
-    --radius-10: 10px;
+        /* ========== Typography ========== */
+        --font-size-3xl: 2rem;
+
+        /* ========== Border Radius ========== */
+        --radius-10: 10px;
+    }
+}
+
+@layer utilities {
+    .font-sf-pro-display {
+        font-family: var(--font-family-sf-pro-display);
+    }
+
+    .font-inter {
+        font-family: var(--font-family-inter);
+    }
+
+    .w-25 {
+        width: var(--width-25);
+    }
+
+    .p-7\.5 {
+        padding: var(--spacing-7-5);
+    }
+
+    .text-3xl {
+        font-size: var(--font-size-3xl);
+    }
+
+    .rounded-10 {
+        border-radius: var(--radius-10);
+    }
 }

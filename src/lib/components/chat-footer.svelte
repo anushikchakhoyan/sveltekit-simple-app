@@ -38,7 +38,7 @@
 			class:active={page.url.pathname === url}
 		>
 			<Icon />
-			<p class="text-sm leading-snug font-normal tracking-normal">{title}</p>
+			<p class="font-inter text-sm leading-snug font-normal tracking-normal">{title}</p>
 		</button>
 	{/each}
 </div>
