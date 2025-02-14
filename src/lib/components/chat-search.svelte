@@ -1,22 +1,38 @@
-<script>
+<script lang="ts">
 	import SearchIcon from '$lib/icons/search-icon.svelte';
 	import ArrowLeftIcon from '$lib/icons/arrow-left-icon.svelte';
+	import { slide } from 'svelte/transition';
 
 	export let suggestions = [
-		'In-game bonuses and free spins',
-		'Crypto deposit still not credited?',
-		'EigerX VIP program overview',
-		'Achievements and awards'
+		{
+			title: 'In-game bonuses and free spins',
+			details: 'Learn how to claim bonuses and get free spins.'
+		},
+		{
+			title: 'Crypto deposit still not credited?',
+			details: 'Check common issues and solutions for crypto deposits.'
+		},
+		{
+			title: 'EigerX VIP program overview',
+			details: 'Discover the benefits of the VIP program at EigerX.'
+		},
+		{ title: 'Achievements and awards', details: 'View your in-game achievements and rewards.' }
 	];
 
 	let searchQuery = '';
-	$: filteredSuggestions = searchQuery
-		? suggestions.filter((item) => item.toLowerCase().includes(searchQuery.toLowerCase()))
-		: suggestions;
+	let expandedIndex = null as null | number;
+
+	$: filteredSuggestions = suggestions.filter((item) =>
+		item.title.toLowerCase().includes(searchQuery.toLowerCase())
+	);
+
+	function toggleExpand(index: number): void {
+		expandedIndex = expandedIndex === index ? null : index;
+	}
 </script>
 
-<div class="min-height-14.375 w-full rounded-lg border border-black bg-gray-900 p-1.5">
-	<!-- Main container for the search box  -->
+<div class="min-h-14.375 w-full rounded-lg border border-black bg-gray-900 p-1.5">
+	<!-- Search Input -->
 	<div class="relative flex items-center">
 		<input
 			type="text"
@@ -27,15 +43,33 @@
 		/>
 		<p class="absolute top-3 right-3"><SearchIcon /></p>
 	</div>
-	<!-- Search items list -->
+
+	<!-- Collapsible Search content -->
 	{#if filteredSuggestions.length > 0}
 		<ul class="mt-2 space-y-2">
-			{#each filteredSuggestions as item}
-				<li class="group flex cursor-pointer items-center justify-between px-3 py-2">
-					<span class="font-inter text-sm font-normal text-white group-hover:text-cyan-500">
-						{item}
-					</span>
-					<p class="flex h-4 w-4 items-center justify-center"><ArrowLeftIcon /></p>
+			{#each filteredSuggestions as item, index}
+				<li class="group rounded-lg px-3 py-2 transition-colors duration-300">
+					<button
+						type="button"
+						on:click={() => toggleExpand(index)}
+						class="flex w-full cursor-pointer items-center justify-between"
+					>
+						<span class="font-inter text-sm font-normal text-white group-hover:text-cyan-500">
+							{item.title}
+						</span>
+						<p
+							class="flex h-4 w-4 items-center justify-center transition-transform duration-300"
+							style="transform: rotate({expandedIndex === index ? 90 : 0}deg);"
+						>
+							<ArrowLeftIcon />
+						</p>
+					</button>
+					<!-- Collapsible Content -->
+					{#if expandedIndex === index}
+						<div class="mt-2 text-sm text-gray-400" transition:slide>
+							{item.details}
+						</div>
+					{/if}
 				</li>
 			{/each}
 		</ul>
