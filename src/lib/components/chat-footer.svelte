@@ -31,6 +31,7 @@
 <div
 	class="flex w-full items-center justify-between rounded-lg border border-black bg-gray-900 py-3.5"
 >
+	<!-- Navigation menu -->
 	{#each navigationItems as { title, url, Icon }}
 		<button
 			on:click={() => navigateTo(url)}

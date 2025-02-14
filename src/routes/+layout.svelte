@@ -10,6 +10,7 @@
 </script>
 
 <ParaglideJS {i18n}>
+	<!-- Chat Widget -->
 	<div
 		class="m-4 flex h-full min-h-[600px] w-25 flex-col overflow-hidden rounded-2xl border border-black shadow-lg"
 	>

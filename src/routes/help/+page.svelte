@@ -4,7 +4,6 @@
 
 <div class="grid gap-4">
 	<ChatMessage />
-
 	<div class="min-height-14.375 w-full rounded-lg border border-black bg-gray-900 p-1.5 text-white">
 		<h1>Help section</h1>
 		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>

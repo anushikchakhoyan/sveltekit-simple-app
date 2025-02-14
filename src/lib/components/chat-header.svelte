@@ -1,4 +1,6 @@
 <script>
+	import { goto } from '$app/navigation';
+
 	import Logo from '$lib/icons/logo.svelte';
 	import ChatTitle from '$lib/components/chat-title.svelte';
 
@@ -11,8 +13,10 @@
 
 <div class="flex flex-1 flex-col justify-between py-7.5">
 	<div class="flex items-center justify-between px-5">
-		<Logo />
+		<!-- App logo -->
+		<button on:click={() => goto('/')} class="cursor-pointer"><Logo /></button>
 		<div class="flex -space-x-2">
+			<!-- Profile images of the users -->
 			{#each avatars as avatar, index}
 				<img src={avatar} alt="User" class="h-10 w-10" style="z-index: {3 - index};" />
 			{/each}

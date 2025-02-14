@@ -16,6 +16,7 @@
 </script>
 
 <div class="min-height-14.375 w-full rounded-lg border border-black bg-gray-900 p-1.5">
+	<!-- Main container for the search box  -->
 	<div class="relative flex items-center">
 		<input
 			type="text"
@@ -26,6 +27,7 @@
 		/>
 		<p class="absolute top-3 right-3"><SearchIcon /></p>
 	</div>
+	<!-- Search items list -->
 	{#if filteredSuggestions.length > 0}
 		<ul class="mt-2 space-y-2">
 			{#each filteredSuggestions as item}
