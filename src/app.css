@@ -1,0 +1,25 @@
+@import 'tailwindcss';
+
+@theme {
+    --color-cyan-500: #25FFBC;
+    --color-black: #15171B;
+    --color-white: #fff;
+    --color-gray-400: #B9BABB;
+    --color-gray-500: #83838D;
+    --color-gray-800: #1C1E22;
+    --color-gray-900: #0B0B0F;
+
+    /* ========== Font Families ========== */
+    --font-family-sf-pro-display: 'SF Pro Display', sans-serif;
+    --font-family-inter: 'Inter', sans-serif;
+
+    /* ========== Spacing/Width ========== */
+    --width-25: 25rem;
+    --spacing-7-5: 1.875rem;
+
+    /* ========== Typography ========== */
+    --font-size-3xl: 2rem;
+
+    /* ========== Border Radius ========== */
+    --radius-10: 10px;
+}
