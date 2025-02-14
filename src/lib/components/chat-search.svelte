@@ -15,7 +15,7 @@
 		: suggestions;
 </script>
 
-<div class="min-h-[230px] w-full rounded-lg border border-black bg-gray-900 p-1.5">
+<div class="min-height-14.375 w-full rounded-lg border border-black bg-gray-900 p-1.5">
 	<div class="relative flex items-center">
 		<input
 			type="text"
